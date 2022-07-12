@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-<img sec="Assets/homepage.png" />
+The Preview
+
+<img src="public/Assets/homepage.png" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
