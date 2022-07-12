@@ -1,0 +1,115 @@
+/* //content area mid */
+
+.content__mid > h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.content__mid > p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.outer__div1 {
+  border: 1px solid #92d4e9;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 100%;
+  top: -26px;
+  left: 26px;
+  z-index: -5;
+  border-radius: 1px;
+}
+
+.main_div32 {
+  position: relative;
+
+  z-index: 10;
+}
+
+.outer__div2 {
+  border: 1px solid #92d4e9;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 100%;
+  top: -12px;
+  z-index: -5;
+  left: 13px;
+  border-radius: 1px;
+}
+
+.outer__div3 {
+  border: 1px solid #92d4e9;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 100%;
+  top: 13px;
+  z-index: -5;
+  left: -14px;
+  border-radius: 1px;
+}
+
+.content__img {
+  position: relative;
+}
+
+/* //team css */
+
+.nft__team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.nft__teammembers {
+  padding: 15px;
+  background-color: skyblue;
+  position: relative;
+  text-align: center;
+}
+
+.nft__teammembers::before {
+  background: white;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 7px;
+  height: 7px;
+}
+
+.nft__teammembers::after {
+  background: white;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  width: 7px;
+  height: 7px;
+}
+
+.nft__teammembers > img {
+  border: 2px solid white;
+
+  width: 100%;
+}
+
+.nft__teammembers > h1 {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 10px 0px 0px 0px;
+  color: white;
+}
+
+.nft__teammembers > h4 {
+  margin: 2px 0px;
+  font-weight: 400;
+}
+
+.nft__teammembers > i {
+  font-size: 24px;
+  color: white;
+}

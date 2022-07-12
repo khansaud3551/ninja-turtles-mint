@@ -1,13 +1,419 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.banner {
+  position: relative;
+}
+
+.banner > img {
+  width: 100%;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pre__nav {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  /* Pre Nav */
+  .pre__nav {
+    background-image: linear-gradient(to bottom right, #312a59a6, #350a21d9);
+    display: flex;
+    justify-content: center;
+    padding: 2px 0px;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    /* position: absolute; */
+    top: 0;
+  }
+
+  .pre__nav > p {
+    margin-right: 10px;
+  }
+}
+
+/* Nav */
+.nav {
+  width: 100%;
+  padding: 5px;
+  position: absolute;
+  /* backdrop-filter: blur(10px); */
+  position: -webkit-sticky;
+  top: 0;
+  /* background-color: #101010bb; */
+  z-index: 99;
+}
+
+.navbar__down {
+  display: none;
+}
+
+.nav__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px 1fr;
+  max-width: 85%;
+}
+
+.nav__left > img {
+  cursor: pointer;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.nav__menu > li {
+  list-style: none;
+  display: inline;
+  margin: 0px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav > li > NavLink {
+  padding-bottom: 20px;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.nav__social__icons {
+  margin-left: 20px;
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burger__icon {
+  background-image: url(../public/Assets/icons/List.png);
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  display: none;
+}
+
+.cross__icon {
+  background-image: url(../public/Assets/icons/cross.png);
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* Social Icon */
+.social__icon {
+  width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5px;
+  cursor: pointer;
+  margin: 2px;
+  border-radius: 3px;
+}
+
+.social__icon > div {
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+  background: #88c8e6;
+  width: 100%;
+  height: 100%;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  border: 1px solid rgba(255, 255, 255, 0.541);
+}
+
+.social__icon > div > i {
+  color: rgba(0, 0, 0, 0.801);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.247);
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+ol,
+ul {
+  padding-left: 0rem;
+}
+
+.social__icon > div > img {
+}
+
+.social__icon:hover > div {
+  background-image: var(--bgGradient);
+}
+
+/* Music Player */
+.music__player {
+  background-color: #101010;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+  padding-left: 130px;
+}
+
+.music__player__active > img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: -10px;
+}
+
+.music__player__short > img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: -10px;
+}
+
+.music__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid gray;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+.music__playing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.music__playing > img {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.progress__bar {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.283);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.progress__bar > div {
+  height: 100%;
+  width: 30%;
+  background-color: var(--secondary);
+}
+
+.play__music > p {
+  position: absolute;
+  left: 0;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+}
+
+.add__music {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: -60px;
+  margin-top: 12px;
+}
+
+.hide__music {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: -60px;
+  margin-top: 12px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+/* Music Player Ends Here */
+
+@media screen and (max-width: 1200px) {
+  .navbar__down {
+    display: block;
+    position: fixed;
+    left: 0;
+    /* background-image: url("../public/Assets/navbg.png"); */
+    background-image: url("../public/Assets/bg.jpg");
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    z-index: 55;
+    top: 0;
+    transform: translateY(-120vh);
+    transition: 0.25s;
+  }
+
+  .cont2 {
+    background-position: left !important;
+  }
+
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .cont2 {
+    display: block;
+    position: absolute;
+    left: 0;
+    min-height: 100vh;
+    /* backdrop-filter: blur(10px) !important; */
+    background-size: cover;
+    background-position: center;
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    z-index: 55;
+    top: 0;
+    transform: translateY(0);
+    transition: 0.25s;
+  }
+
+  .navPhone__button {
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navPhone__button > .btn-primary {
+    width: 100%;
+  }
+
+  .navPhone__button > .btn-primary > div {
+    width: 100%;
+    height: 35px;
+  }
+
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .navbar__top {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .navbar__items > p {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .nav__menu {
+    min-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__menu > li {
+    width: 95%;
+    margin-left: -20px;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.258);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .nav__menu > li:hover > img {
+    display: flex;
+    margin-left: 15px;
+    opacity: 1;
+    margin-right: 15px;
+  }
+
+  .nav__menu > li > img {
+    opacity: 0;
+    transition: 0.15s;
+  }
+
+  .nav__social__icons {
+    margin: 0;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .music__player {
+    display: none;
+  }
+
+  .nav__right {
+    display: none;
+  }
+
+  .burger__icon {
+    display: block;
+  }
 }

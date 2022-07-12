@@ -1,0 +1,13 @@
+.icons__footers {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 45px;
+}
+
+.discord__icon {
+  margin-top: -9px;
+  margin-left: -15px;
+  cursor: pointer;
+}
